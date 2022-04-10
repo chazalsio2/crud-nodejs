@@ -1,0 +1,74 @@
+<%- include('../layout/header.ejs') %> 
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 mt-4">
+                            <div class="table-responsive"> 
+                                <h3> <%= project.type %></h3>
+                            <table class="table table-striped text-center">
+                                <thead>
+                                    <tr class="table-dark">
+                                        <th><p>Votre buget est de </p></th>
+                                        <th><p>Votre projet se trouve </p></th>
+                                        <th></th>
+                                        <th><p>Dont  l'estimation est de </p></th>
+                                        <th><p>description du projet </p> </th>
+                                        <th><p>Acheteur</p></th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                    <tr>
+                                        <td>
+                                             <p><%=project.buget%> </p>
+                                        </td>
+                                        <td >
+                                             <p><%=project.localisaton%></p>
+                                        </td>
+                                        <td >
+                                            <p><%=project.ressource%></p>
+                                        </td>
+                                        <td >
+                                             <p><%=project.estimation%></p>
+                                        </td>
+                                        <td >
+                                            <p><%=project.description%></p>
+                                        </td>
+                                        <td >
+                                           <form method="post" action="/addPlayer/<%= project._id %> "> 
+                                            <select name="buyerId" value="<%= project.buyerId %>" >
+                                                <option value="">
+                                                    veillez choisir un acheteur
+                                                </option>   
+                                                <% user.forEach((row, index) => { %>
+                                                    <option value=<%=row._id%>>
+                                                        <%= row.lastname %> <%= row.name %> 
+                                                    </option>   
+                                                <% }) %>  
+                                            </select>
+                                            <td>
+                                                <div className="disabled"id="famille" >
+                                                    <input type="submit" name="submit"  class="btn btn-primary ">
+                                                </div>
+                                            </td>
+                                        </form> 
+                                        </td>
+                                        
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+    </div>
+</div>
+
+    </div>
+    <script type="text/javascript">
+        function setReferal() {
+            var idPerimetre = $( "#acheteur" ).val();
+            $('#famille').removeClass('mb-3 d-grid');
+              return IDPerimetre;
+          
+        }
+    </script>
+
+<%- include('../layout/footers') %> 

@@ -1,0 +1,52 @@
+<%- include('../layout/header.ejs') %> 
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12 mt-6">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 mx-auto mt-4">
+                        <div class="card shadow">
+                            <div class="card-header bg-primary"> 
+                                <h3>Ajouter un Projet</h3>
+                            </div>
+                            <div class="card-body p-4">
+                                <form action="/completeProject/<%=project%>" method='post' name="from" id="add-form">
+                                    <div class="mb-3">
+                                        <label for="name">Type</label>
+                                        <input type="text" name="type" class="form-control form-control-lg mb-3" placeholder="Entrer votre prenom" required/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="lastname">Prix</label>
+                                        <input  type="number" name="buget" class="form-control form-control-lg mb-3" placeholder="Entrer le prix du projet" required/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="email">Localisaton</label>
+                                        <input type="mail" name="localisaton" class="form-control form-control-lg mb-3" placeholder="Entrer la localisaton votre projet" required/>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="age">Ressource</label>
+                                        <input type="text" name="ressource" class="form-control form-control-lg "  placeholder="Entrer le(s) Ressource a prevoir"  />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="age">Estimation des ressource a prevoir</label>
+                                        <input type="number" name="estimation" class="form-control form-control-lg "  placeholder="Entrer votre prenom"  />
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="age">Description</label>
+                                        <textarea type="text-area" name="description" class="form-control form-control-lg "  placeholder="Entrer votre prenom" required></textarea>
+                                    </div>
+                                    <div class="mb-3 d-grid">
+                                        <input type="submit" name="submit"  class="btn btn-primary btn-lg">
+                                    </div>
+                                </form> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../layout/footers') %> 
