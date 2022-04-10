@@ -36,7 +36,7 @@
                                         </td>
                                         <td >
                                            <form method="post" action="/addPlayer/<%= project._id %> "> 
-                                            <select name="buyerId" value="<%= project.buyerId %>" >
+                                            <select name="buyerId" value={<%= project.buyerId %>} >
                                                 <option value="">
                                                     veillez choisir un acheteur
                                                 </option>   

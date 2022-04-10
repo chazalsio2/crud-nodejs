@@ -14,6 +14,7 @@
                             <th> Estimation des ressource a prevoir  </th>
                             <th> Description </th>
                             <th>acheteur</th>
+                            <th>Vendeur</th>
                             <th> Action  </th>
                         </tr>
                     </thead>
@@ -25,7 +26,14 @@
                                 <td> <%= row.ressource %> </td>
                                 <td> <%= row.estimation %> </td>
                                 <td> <%= row.description %> </td>
-                                <td> <%= row.buyerId %> </td>
+                                <td>
+                                <% if (row.buyerId) { %>
+                                    <a href="user/<%=row.buyerId%>"style="text-decoration: none;"> voir l'acheteur </a>
+                                <% }else{ %>
+                                    <a> Pas encore d'acheteur </a>
+                                    <% } %> 
+                                </td>
+                                <td> <a href="user/<%=row.userId%>" style="text-decoration: none;">Voir Le vendeur</a></td> 
                                 <td> 
                                     <a href="/project/<%=row._id%>" class="text-success">Voir</a>
                                     <a href="/EditeProject/<%=row._id%> " class="text-success"><i class="fas fa-edit fa-lg mx-1"></i></a>
